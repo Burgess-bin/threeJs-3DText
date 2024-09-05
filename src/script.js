@@ -44,16 +44,16 @@ textGeometry.center();
 scene.add(textMesh);
 
 //圆环
-for (let i = 0; i < 200; i++) {
+for (let i = 0; i < 500; i++) {
   const tourgeomery = new THREE.TorusGeometry(1, 0.6, 16, 100);
   // const material = new THREE.MeshMatcapMaterial({ map: texture });
   const material = new THREE.MeshMatcapMaterial({ matcap: texture });
   const cube = new THREE.Mesh(tourgeomery, material);
-  const random = Math.random() * 1.5;
+  const random = Math.random();
   cube.position.set(
-    (Math.random() - 0.5) * 20,
-    (Math.random() - 0.5) * 20,
-    (Math.random() - 0.5) * 20
+    (Math.random() - 0.5) * 50,
+    (Math.random() - 0.5) * 50,
+    (Math.random() - 0.5) * 50
   );
   cube.rotation.set(
     Math.random() * Math.PI,
@@ -96,7 +96,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
-camera.position.set(0, 0, 20);
+camera.position.set(0, 0, 16);
 scene.add(camera);
 
 // Controls
@@ -108,6 +108,7 @@ controls.enableDamping = true;
  */
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
+  antialias: true,
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
