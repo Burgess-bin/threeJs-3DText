@@ -1,16 +1,9 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import GUI from "lil-gui";
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
 import { FontLoader } from "three/addons/loaders/FontLoader.js";
 import helvetikerText from "three/examples/fonts/helvetiker_regular.typeface.json";
 import mapcapImg from "../static/textures/matcaps/8.png";
-
-/**
- * Base
- */
-// Debug
-const gui = new GUI();
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
